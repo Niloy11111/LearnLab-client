@@ -1,0 +1,39 @@
+@theme inline {
+  --color-secondary-50: var(--secondary-50);
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+  --color-secondary-600: var(--secondary-600);
+  --color-secondary-700: var(--secondary-700);
+  --color-secondary-800: var(--secondary-800);
+  --color-secondary-900: var(--secondary-900);
+  --color-secondary-950: var(--secondary-950);
+}
+/* :root {
+  --secondary-50: #fefcfc;
+  --secondary-100: #fdf2f2;
+  --secondary-200: #fae1e1;
+  --secondary-300: #f6c9c9;
+  --secondary-400: #f1abab;
+  --secondary-500: #eb8686;
+  --secondary-600: #e45a5a;
+  --secondary-700: #dc2828;
+  --secondary-800: #7c1414;
+  --secondary-900: #400a0a;
+  --secondary-950: #2c0707;
+} */
+:root {
+  --secondary-50: #fffaeb;
+  --secondary-100: #fef0c7;
+  --secondary-200: #fde08a;
+  --secondary-300: #fdca4c;
+  --secondary-400: #fcb72b;
+  --secondary-500: #f6920a;
+  --secondary-600: #da6c05;
+  --secondary-700: #b54a08;
+  --secondary-800: #93390d;
+  --secondary-900: #78300f;
+  --secondary-950: #451703;
+}
