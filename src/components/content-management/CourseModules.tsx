@@ -2,7 +2,7 @@ import CourseModule from "./CourseModule";
 
 const CourseModules = ({ courseModules, searchParams }) => {
   return (
-    <div className=" ">
+    <div className=" customWidth">
       {courseModules
         ?.slice()
         .sort((a, b) => a.moduleNumber - b.moduleNumber)

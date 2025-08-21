@@ -44,6 +44,8 @@ export const getAllProducts = async (
     params.append("squareFeet", query?.squareFeet.toString());
   }
 
+  console.log(process.env.NEXT_PUBLIC_BASE_API);
+
   try {
     console.log("Before fetching data");
     const res = await fetch(

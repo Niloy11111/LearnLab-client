@@ -20,7 +20,7 @@ export default async function middleware(request: NextRequest) {
     } else {
       return NextResponse.redirect(
         new URL(
-          `http://localhost:3000/login?redirectPath=${pathname}`,
+          `https://learn-lab-client.vercel.app/login?redirectPath=${pathname}`,
           request.url
         )
       );

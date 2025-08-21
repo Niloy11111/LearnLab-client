@@ -1,7 +1,7 @@
 import { getAllCourseModules } from "@/services/CourseModules";
 import { getAllLectures } from "@/services/Lecture";
 import { getAllProducts, getSingleProduct } from "@/services/Product";
-import { getAllUsers } from "@/services/User";
+import { getAllUserProgress } from "@/services/user-progress";
 import { IProduct } from "@/types";
 import { ICourseModule } from "@/types/course-module";
 import { ILecture } from "@/types/lecture";
@@ -155,9 +155,9 @@ export const useAllLectures = (page, limit, query) => {
 
   return { data, isError, isLoading, reFetch };
 };
+export const useAllUserProgress = (query) => {
+  const [data, setData] = useState<ILecture[]>([]);
 
-export const useAllUsers = () => {
-  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -165,7 +165,7 @@ export const useAllUsers = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const res = await getAllUsers();
+        const res = await getAllUserProgress(query);
         setData(res.data);
       } catch (err: any) {
         setIsError(err);
@@ -175,40 +175,16 @@ export const useAllUsers = () => {
     fetchData();
   }, []);
 
-  // const reFetch = async () => {
-  //   setIsLoading(true);
-  //   try {
-  //     const { data: users } = await getAllUsers();
-  //     const activeUsers = users?.filter((user) => user?.isActive === true);
+  const reFetch = async () => {
+    setIsLoading(true);
+    try {
+      const res = await getAllUserProgress(query);
+      setData(res.data);
+    } catch (err) {
+      setIsError(err);
+    }
+    setIsLoading(false);
+  };
 
-  //     setData(activeUsers);
-  //   } catch (err) {
-  //     setIsError(err);
-  //   }
-  //   setIsLoading(false);
-  // };
-
-  return { data, isError, isLoading, setData };
+  return { data, isError, isLoading, reFetch };
 };
-
-// export const useAllApplication = () => {
-//   const [data, setData] = useState([]);
-//   const [isLoading, setIsLoading] = useState(false);
-//   const [isError, setIsError] = useState(false);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       setIsLoading(true);
-//       try {
-//         const res = await getAllApplications(undefined, undefined);
-//         setData(res.data);
-//       } catch (err: any) {
-//         setIsError(err);
-//       }
-//       setIsLoading(false);
-//     };
-//     fetchData();
-//   }, []);
-
-//   return { data, isError, isLoading, setData };
-// };

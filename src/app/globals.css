@@ -139,10 +139,10 @@
 
 @layer components {
   .navBtn {
-    @apply transition-all duration-100 cursor-pointer hover:text-secondary-600 pb-4 mb-2 mt-3 hover:border-b-[3px] border-secondary-600;
+    @apply transition-all duration-100 cursor-pointer md:hover:text-secondary-600 pb-2 md:pb-4 mb-2 mt-3 hover:border-b-[3px] md:border-secondary-600;
   }
   .navBtnActive {
-    @apply transition-all duration-100 cursor-pointer text-secondary-600 pb-4 mb-2 mt-3 border-b-[3px] border-secondary-600;
+    @apply transition-all duration-100 cursor-pointer md:text-secondary-600 pb-2 md:pb-4 mb-2 mt-3 border-b-[3px] md:border-secondary-600;
   }
   .megaMenuTitle {
     @apply font-bold text-secondary-600 mb-5;

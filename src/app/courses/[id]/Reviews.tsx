@@ -8,7 +8,7 @@ import { reviews } from "@/components/modules/home/landing/utils";
 import "./reviews.css";
 const Reviews = () => {
   return (
-    <section className="testimonial-container ">
+    <section className=" testimonial-container ">
       <div className="title">
         <h2 className="mb-3">Happy Learners</h2>
         <p>Real stories from our students.</p>

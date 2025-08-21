@@ -16,22 +16,22 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
 
   console.log("courses", courses);
   return (
-    <div>
+    <div className="pb-16">
       <Navbar />
       <div className=" flex flex-col customWidth">
         <div>
-          <h1 className="text-2xl font-black text-center my-10">All Courses</h1>
+          <h1 className="text-2xl font-black text-center my-16">All Courses</h1>
 
           <div>
             {courses?.length === 0 ? (
-              <div className="min-h-screen grid lg:grid-cols-4 gap-5">
+              <div className="min-h-screen grid 2xl:grid-cols-4 xl:grid-cols-3  md:grid-cols-2  gap-5">
                 {Array.from({ length: 8 }).map((item, index) => (
                   <FeaturedPropertiesSkeleton key={index} />
                 ))}
               </div>
             ) : (
               <div className=" w-full ">
-                <div className="grid lg:grid-cols-4 gap-5">
+                <div className="grid 2xl:grid-cols-4 xl:grid-cols-3  md:grid-cols-2  gap-5">
                   {courses?.slice(0, 8).map((course: IProduct) => (
                     <CardTwo
                       key={course._id}

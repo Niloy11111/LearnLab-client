@@ -1,4 +1,4 @@
-import { House, Landmark, User, Users } from "lucide-react";
+import { BookPlus, House, Landmark, User } from "lucide-react";
 export const adminPaths = [
   {
     title: "My Profile",
@@ -8,7 +8,7 @@ export const adminPaths = [
   {
     title: "View Courses",
     url: "/admin/courses",
-    icon: Users,
+    icon: BookPlus,
   },
   {
     title: "Lectures",

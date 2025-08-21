@@ -30,26 +30,28 @@ const ModuleAccordion = ({ lectures, courseModules }) => {
 
   return (
     <div className="my-4">
-      <section className=" ">
+      <section
+        className="h-[700px] overflow-y-auto "
+        style={{ scrollbarWidth: "thin" }}
+      >
         {courseModules
           ?.sort((a, b) => a.moduleNumber - b.moduleNumber)
           ?.map((courseModule) => (
             <div
               key={courseModule?._id}
-              className=" bg-white p-3 rounded-md mb-5"
+              className=" bg-white p-3 rounded-md mb-5 border-b border-primary-300"
             >
               <div
                 onClick={() => handleVisibility(courseModule?._id)}
                 className="cursor-pointer   flex justify-between "
               >
-                <div className="border-b border-primary-300">
+                <div className="">
                   <h1 className="font-bold text-xl text-primary-800">
                     Module {courseModule?.moduleNumber}:{" "}
-                    {courseModule?.moduleTitle} Lorem, ipsum dolor. Lorem, ipsum
-                    dolor.
+                    {courseModule?.moduleTitle}
                   </h1>
                   <p className="text-primary-600 mt-1 mb-2  text-sm">
-                    2 hours 3m
+                    1 hours 3m
                   </p>
                 </div>
                 <button>

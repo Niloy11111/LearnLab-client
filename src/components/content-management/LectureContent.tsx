@@ -9,7 +9,7 @@ const LectureContent = async ({ query, toggle, moduleId, courseModule }) => {
   console.log("LectureContent", query);
 
   return (
-    <div className="bg-white ">
+    <div className="bg-white px-3 rounded-bl-lg rounded-br-lg">
       {moduleId === courseModule?._id &&
         toggle &&
         lectures

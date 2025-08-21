@@ -25,7 +25,7 @@ const HeroSection = () => {
         >
           <div className="max-w-4xl mx-auto px-16 sm:px-12">
             <h1 className="text-5xl font-extrabold text-white mb-4">
-              Your Learning Journey Starts Here For Success
+              Your Professional Training Starts Here Today
             </h1>
             <p className="text-xl text-white mb-8">
               Explore our comprehensive course library crafted to match your

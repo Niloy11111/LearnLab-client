@@ -25,7 +25,7 @@ const AdminPage = () => {
           <Image
             src="https://hype.my/wp-content/uploads/2024/07/4-10.jpg"
             width={500}
-            alt=""
+            alt="cover"
             height={200}
             className="w-full h-[350px] rounded"
           />
@@ -33,7 +33,7 @@ const AdminPage = () => {
             <Image
               src={user?.photo}
               width={160}
-              alt=""
+              alt="profile"
               height={160}
               className=" rounded-full"
             />

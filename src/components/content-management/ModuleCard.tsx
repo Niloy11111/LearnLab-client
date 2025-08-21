@@ -82,7 +82,6 @@ const ModuleCard = ({ lectures, courseModule }) => {
               </span>{" "}
               {courseModule?.moduleNumber}: {courseModule?.moduleTitle}{" "}
               <span className="bg-amber-300 rounded-full p-2 text-xs ml-3">
-                {/* {courseModules?.length} */}
                 {lectures?.length} lectures
               </span>
             </div>

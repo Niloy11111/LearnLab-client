@@ -15,8 +15,10 @@ const ContentManagement = async ({
   const { data: courseModules } = await getAllCourseModules(id);
 
   return (
-    <>
-      <h1 className="text-center font-bold my-5">Content Management</h1>
+    <div className="mb-16">
+      <h1 className="text-center font-bold my-10 text-2xl">
+        Content Management
+      </h1>
       {/* All Modules list related to course */}
       <CourseCard />
 
@@ -24,7 +26,7 @@ const ContentManagement = async ({
         courseModules={courseModules}
         searchParams={searchParams}
       />
-    </>
+    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const ManageProducts = ({ products }: { products: IProduct[] }) => {
       </div>
 
       <hr className=" border-t border-input" />
-      <div className="grid gap-5 grid-cols-4  my-5">
+      <div className="grid 2xl:grid-cols-4 xl:grid-cols-3  md:grid-cols-2  gap-5  my-5">
         {products?.map((product: IProduct) => (
           <SingleManageProduct key={product?._id} product={product} />
         ))}

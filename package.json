@@ -1,5 +1,5 @@
 {
-  "name": "Minimal-LMS-System-Client",
+  "name": "learnlab-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \"added readme professionally \" && git push"
+    "commit": "git add . && git commit -m \"sequential module showing features and userProgress record and responsiveness\" && git push"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

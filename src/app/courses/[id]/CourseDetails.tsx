@@ -7,12 +7,12 @@ import Reviews from "./Reviews";
 
 const CourseDetails = ({ course }: { course: IProduct }) => {
   return (
-    <div className="mb-6">
+    <div className="mb-6 md:w-full w-[360px]">
       {/* instructor */}
 
       <div>
         <h2 className="text-xl font-semibold my-3">Course Instructors</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 2xl:grid-cols-4 lg:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-8">
           <div className="bg-gray-100  border rounded-xl py-8 px-4  ">
             <Image
               src="/instructor-1.jpg"
@@ -72,15 +72,12 @@ const CourseDetails = ({ course }: { course: IProduct }) => {
         </div>
       </div>
       {/* Reviews */}
-      <div className="mt-12 mb-16">
-        <h3 className="text-xl font-semibold text-primary-800 dark:text-primary-100">
-          Reviews
-        </h3>
+      <div className="lg:block hidden mt-12 mb-16">
         <Reviews />
       </div>
       {/* Tabs Section */}
       <div>
-        <h3 className="text-xl font-semibold text-primary-800 dark:text-primary-100 mb-5">
+        <h3 className="text-xl mt-16 font-semibold text-primary-800 dark:text-primary-100 mb-5">
           Fees and Policies
         </h3>
         <p className="text-sm text-primary-600 dark:text-primary-300 mt-2">

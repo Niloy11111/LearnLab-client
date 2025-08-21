@@ -34,7 +34,7 @@ const ImagePreviews = ({ images }: ImagePreviewsProps) => {
             alt={`course Image ${index + 1}`}
             fill
             priority={index == 0}
-            className="object-cover cursor-pointer transition-transform duration-500 ease-in-out"
+            className="object-cover  cursor-pointer transition-transform duration-500 ease-in-out"
           />
         </div>
       ))}

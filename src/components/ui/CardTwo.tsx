@@ -1,5 +1,5 @@
 "use client";
-import { Bath, Bed, House, Star } from "lucide-react";
+import { Book, MoreHorizontal, School, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -23,12 +23,12 @@ const CardTwo = ({ course, courseLink }: Record<string, any>) => {
         <div className="absolute bottom-4 left-4 flex gap-2">
           {course && (
             <span className="bg-[#ebf0f5] text-primary-800 text-xs font-semibold px-2 py-1 rounded-full">
-              Pets Allowed
+              Live Class
             </span>
           )}
           {course && (
             <span className="bg-[#ebf0f5] text-primary-800 text-xs font-semibold px-2 py-1 rounded-full">
-              Parking Included
+              Assignments
             </span>
           )}
         </div>
@@ -39,7 +39,7 @@ const CardTwo = ({ course, courseLink }: Record<string, any>) => {
       </div>
       <div className="p-4">
         <div className="flex items-center justify-between">
-          <h2 className=" font-bold mb-1 ">{course?.title}</h2>
+          <h2 className=" font-bold mb-1 text-xl">{course?.title}</h2>
 
           <Link href={courseLink} className="" scroll={false}>
             <button
@@ -70,15 +70,15 @@ const CardTwo = ({ course, courseLink }: Record<string, any>) => {
         <hr className="" />
         <div className="flex justify-between items-center gap-4 text-gray-600 mt-5">
           <span className="flex items-center">
-            <Bed className="w-5 h-5 mr-2" />
+            <School className="w-5 h-5 mr-2" />
             {course.beds} Lecture
           </span>
           <span className="flex items-center">
-            <Bath className="w-5 h-5 mr-2" />
+            <Book className="w-5 h-5 mr-2" />
             {course.baths} Module
           </span>
           <span className="flex items-center">
-            <House className="w-5 h-5 mr-2" />
+            <MoreHorizontal className="w-5 h-5 mr-2" />
             {course.squareFeet} More
           </span>
         </div>

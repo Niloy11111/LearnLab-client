@@ -34,7 +34,7 @@ const FeaturedProducts = () => {
             </div>
           ) : (
             <div className=" w-full ">
-              <div className="grid lg:grid-cols-4 gap-5">
+              <div className="grid 2xl:grid-cols-4 xl:grid-cols-3  md:grid-cols-2  gap-5">
                 {courses?.slice(0, 8).map((course: IProduct) => (
                   <CardTwo
                     key={course._id}
@@ -58,12 +58,6 @@ const FeaturedProducts = () => {
             </Link>
           </div>
         </div>
-
-        {/* <div className="grid grid-cols-5 gap-8 my-5">
-          {products?.slice(0, 5).map((product: IProduct, idx: number) => (
-            <ProductCard key={idx} product={product} />
-          ))}
-        </div> */}
       </div>
     </div>
   );

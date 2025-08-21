@@ -1,10 +1,3 @@
-type Specification = {
-  processor: string;
-  ram: string;
-  storage: string;
-  display: string;
-};
-
 export interface IProduct {
   _id: string;
   title: string;

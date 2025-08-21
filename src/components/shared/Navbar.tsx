@@ -26,7 +26,6 @@ const Navbar = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  console.log(userInfo);
   const [scrollY, setScrollY] = useState(0);
   const isDashboardPage = pathname.includes("/admin");
 
@@ -47,10 +46,10 @@ const Navbar = () => {
     <div className="w-full  text-sm">
       <div className=" shadow-xl bg-secondary-500 text-white">
         <div
-          className=" customWidth flex justify-center items-center w-full"
+          className=" customWidth  items-center "
           style={{ height: `${NAVBAR_HEIGHT}px ` }}
         >
-          <div className="flex justify-between customWidth">
+          <div className="flex md:justify-between justify-center h-full items-center md:customWidth">
             {!isDashboardPage && (
               <>
                 <div className="md:flex gap-5  items-center   hidden ">
@@ -59,7 +58,7 @@ const Navbar = () => {
                     <span>+9 (681) 843-4596</span>
                   </p>
                   <p className="font-semibold lg:flex items-center gap-1 hidden ">
-                    <Mail className="w-[16px]" /> <span>info@Lab.com</span>
+                    <Mail className="w-[16px]" /> <span>info@LearnLab.com</span>
                   </p>
                 </div>
                 <div className="md:flex items-center   hidden ">
@@ -72,6 +71,42 @@ const Navbar = () => {
                       interactive learning platform
                     </span>
                   </p>
+                </div>
+
+                {/* mobile */}
+
+                <div className={`md:hidden flex    items-center gap-8   `}>
+                  <Link href="/" className="md:mr-0 sm:mr-5">
+                    {" "}
+                    <button
+                      className={`${
+                        pathname === "/" ? "navBtnActive" : "navBtn"
+                      }`}
+                    >
+                      Home
+                    </button>
+                  </Link>
+                  <Link href="/courses" className="md:mr-0 sm:mr-5">
+                    {" "}
+                    <button
+                      className={`${
+                        pathname === "/courses" ? "navBtnActive" : "navBtn"
+                      }`}
+                    >
+                      Courses
+                    </button>
+                  </Link>
+
+                  <Link href="/contact-us" className="md:mr-0 sm:mr-5">
+                    {" "}
+                    <button
+                      className={`${
+                        pathname === "/contact-us" ? "navBtnActive" : "navBtn"
+                      }`}
+                    >
+                      Contact Us
+                    </button>
+                  </Link>
                 </div>
               </>
             )}
@@ -111,7 +146,7 @@ const Navbar = () => {
           </div>
           {!isDashboardPage && (
             <>
-              <div className={`mt-3 md:flex items-center gap-8   `}>
+              <div className={`hidden  mt-3 md:flex  items-center gap-8   `}>
                 <Link href="/" className="md:mr-0 sm:mr-5">
                   {" "}
                   <button
@@ -146,6 +181,7 @@ const Navbar = () => {
               </div>
             </>
           )}
+
           <div className="flex items-center gap-5 ">
             {userInfo ? (
               <>
@@ -160,9 +196,13 @@ const Navbar = () => {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger className="flex items-center gap-2 focus:outline-none">
+                    <p className=" block md:hidden mr-1">{userInfo?.name}</p>
                     <Avatar>
                       {/* <AvatarImage src={userInfo.userInfo?.image} /> */}
-                      <AvatarFallback className="bg-primary-600">
+                      <AvatarFallback
+                        className="bg-primary-600 text-white
+                      "
+                      >
                         {userInfo.role?.[0].toUpperCase()}
                       </AvatarFallback>
                       <AvatarImage src={userInfo?.photo} />

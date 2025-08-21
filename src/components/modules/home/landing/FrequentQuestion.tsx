@@ -16,19 +16,19 @@ const FrequentQuestion = () => {
 
   return (
     <div className="my-24">
-      <h1 className="text-5xl  mb-10 text-center font-bold text-primary-800">
-        Frequently Asked Questions
+      <h1 className="text-4xl md:text-5xl  mb-16 text-center font-bold text-primary-800">
+        Frequently Asked <br className="md:hidden block" /> Questions
       </h1>
 
-      <section className="w-[40%] mx-auto">
+      <section className="customWidth xl:w-[40%] lg:w-[50%] md:w-[60%] mx-auto">
         {faqs?.map((item) => (
           <div
             onClick={() => handleVisibility(item?.id)}
             key={item?.id}
             className="border-b "
           >
-            <div className="cursor-pointer flex justify-between ">
-              <h1 className="pb-5 mt-4 font-bold text-xl text-primary-800">
+            <div className="pt-2 cursor-pointer flex justify-between ">
+              <h1 className="pb-8 font-bold text-xl text-primary-800">
                 {item?.question}
               </h1>
               {item?.id === currentId ? <Minus /> : <Plus />}

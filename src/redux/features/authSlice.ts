@@ -10,6 +10,7 @@ export type TUser = {
   exp: number;
   email?: string;
   phoneNumber?: string;
+  isActive: boolean;
   photo?: string;
 };
 

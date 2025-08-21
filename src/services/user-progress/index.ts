@@ -1,39 +1,45 @@
 "use server";
 
-import { ICourseModule } from "@/types/course-module";
+import { IUserProgressUpdate } from "@/types/userProgress";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 
-export const createCourseModule = async (moduleData: any): Promise<any> => {
+export const createUserProgress = async (userProgressData): Promise<any> => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/module/create-module`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/user-progress/create`,
       {
         method: "POST",
-        body: moduleData,
+        body: userProgressData,
         headers: {
           "Content-Type": "application/json",
           Authorization: (await cookies()).get("accessToken")!.value,
         },
       }
     );
-    revalidateTag("MODULE");
+    revalidateTag("PROGRESS");
     return res.json();
   } catch (error: any) {
     return Error(error);
   }
 };
 
-export const getAllCourseModules = async (courseId: string) => {
-  // console.log("from ", query?.priceRange);
+export const getAllUserProgress = async (query?: {
+  [key: string]: string | string[] | undefined;
+}) => {
+  const params = new URLSearchParams();
+
+  if (query?.userId) {
+    params.append("userId", query?.userId.toString());
+  }
 
   try {
     console.log("Before fetching data");
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/module/${courseId}`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/user-progress?${params}`,
       {
         next: {
-          tags: ["MODULE"],
+          tags: ["PROGRESS"],
         },
       }
     );
@@ -46,14 +52,14 @@ export const getAllCourseModules = async (courseId: string) => {
   }
 };
 
-export const updateCourseModule = async (
-  payload: Partial<ICourseModule>,
-  moduleId: string
+export const updateUserProgress = async (
+  payload: Partial<IUserProgressUpdate>,
+  progressId: string
 ): Promise<any> => {
   try {
-    console.log("from services", moduleId);
+    console.log("from services", progressId);
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/module/${moduleId}`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/user-progress/${progressId}/update`,
       {
         method: "PATCH",
         body: JSON.stringify(payload),
@@ -63,7 +69,7 @@ export const updateCourseModule = async (
         },
       }
     );
-    revalidateTag("MODULE");
+    revalidateTag("PROGRESS");
     return res.json();
   } catch (error: any) {
     return Error(error);
@@ -87,7 +93,7 @@ export const deleteCourseModule = async (
         },
       }
     );
-    revalidateTag("MODULE");
+    revalidateTag("PROGRESS");
     return res.json();
   } catch (error: any) {
     return Error(error);
