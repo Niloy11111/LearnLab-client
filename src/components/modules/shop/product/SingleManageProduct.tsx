@@ -21,8 +21,9 @@ const SingleManageProduct = ({ product }) => {
     const toastId = toast.loading("Course Deleting... ");
     try {
       if (product?._id) {
-        const res = await deleteProduct(product?._id);
-        // console.log(res);
+        const payload = { isDeleted: "true" };
+        const res = await deleteProduct(payload, product?._id);
+        console.log("hskdfds", res);
         if (res.success) {
           toast.success("Course Deleted", { id: toastId });
           setOpenDelete(false);

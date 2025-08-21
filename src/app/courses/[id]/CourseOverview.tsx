@@ -36,7 +36,7 @@ const CourseOverview = ({ courseId }: { courseId: string }) => {
       </div>
 
       {/* Details */}
-      <div className="w-[350px] sm:w-[500px]  border border-primary-200 rounded-xl  p-3 sm:p-6 mb-6">
+      <div className="w-[350px] sm:w-[500px] md:w-full  border border-primary-200 rounded-xl  p-3 sm:p-6 mb-6">
         <div className="grid grid-cols-2 sm:flex sm:justify-between sm:items-center gap-4 px-2 sm:px-5">
           <div className="text-center sm:text-left">
             <div className="text-sm text-gray-500">Price</div>
@@ -63,7 +63,7 @@ const CourseOverview = ({ courseId }: { courseId: string }) => {
       </div>
 
       {/* Summary */}
-      <div className="my-16 d:w-full w-[360px]">
+      <div className="my-16 d:w-full w-[360px] md:w-full">
         <h2 className="text-xl font-semibold mb-5  ">About {course?.title}</h2>
         <p className="text-gray-500 leading-7">{course?.description}</p>
       </div>

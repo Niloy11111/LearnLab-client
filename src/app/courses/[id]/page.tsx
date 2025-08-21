@@ -53,7 +53,7 @@ const SingleListing = () => {
             <div className="order-1 md:order-2 w-full lg:w-2/6">
               <div className="w-full h-64 relative mb-5">
                 <Image
-                  src="https://media.istockphoto.com/id/1095432950/vector/coaching-word-concepts-banner.jpg?s=2048x2048&w=is&k=20&c=0RU7cjkYB1p_0HoFYhyXlANk6fOX6csWyXGFrsTXtkY="
+                  src={course?.thumbnail}
                   alt={course?.title}
                   fill
                   className="object-cover  rounded-xl"
@@ -90,7 +90,7 @@ const SingleListing = () => {
                   Some Suggested Courses
                 </h1>
                 <div className="p-4 w-full grid  grid-cols-1">
-                  {courses?.slice(1, 8)?.map((course) => (
+                  {courses?.slice(1, 4)?.map((course) => (
                     <CardCompact
                       key={course?._id}
                       course={course}

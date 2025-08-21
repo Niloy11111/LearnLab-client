@@ -70,6 +70,9 @@ export default function LoginForm() {
     if (userType === "admin") {
       credentials.email = "admin@gmail.com";
       form.reset(credentials);
+    } else if (userType === "user") {
+      credentials.email = "user@gmail.com";
+      form.reset(credentials);
     }
   };
 
@@ -90,6 +93,12 @@ export default function LoginForm() {
           Demo Credentials:
         </h1>
         <div className="flex justify-center gap-3 mt-3">
+          <button
+            onClick={() => handleCredential("user")}
+            className="credentialBtn"
+          >
+            User
+          </button>
           <button
             onClick={() => handleCredential("admin")}
             className="credentialBtn"

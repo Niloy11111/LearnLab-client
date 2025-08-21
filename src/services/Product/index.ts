@@ -1,5 +1,4 @@
 "use server";
-import { getValidToken } from "@/lib/verifyTokent";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 
@@ -123,16 +122,20 @@ export const updateProduct = async (
   }
 };
 
-export const deleteProduct = async (productId: string): Promise<any> => {
-  const token = await getValidToken();
-
+export const deleteProduct = async (
+  payload: { isDeleted: string },
+  productId: string
+): Promise<any> => {
   try {
+    console.log("from services", productId);
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/product/${productId}`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/product/${productId}/delete`,
       {
         method: "PATCH",
+        body: JSON.stringify(payload),
         headers: {
-          Authorization: token,
+          "Content-Type": "application/json",
+          Authorization: (await cookies()).get("accessToken")!.value,
         },
       }
     );
@@ -142,3 +145,25 @@ export const deleteProduct = async (productId: string): Promise<any> => {
     return Error(error);
   }
 };
+
+// export const deleteProduct = async (productId: string): Promise<any> => {
+//   const token = await getValidToken();
+
+//   try {
+//     const res = await fetch(
+//       `${process.env.NEXT_PUBLIC_BASE_API}/product/${productId}`,
+//       {
+//         method: "PATCH",
+//         headers: {
+//           Authorization: token,
+//           "Content-Type": "application/json", // important
+//         },
+//         body: JSON.stringify({ data: { isDeleted: true } }),
+//       }
+//     );
+//     revalidateTag("PRODUCT");
+//     return res.json();
+//   } catch (error: any) {
+//     return Error(error);
+//   }
+// };

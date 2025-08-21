@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \"sequential module showing features and userProgress record and responsiveness\" && git push"
+    "commit": "git add . && git commit -m \"fixed course deleting issue\" && git push"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
